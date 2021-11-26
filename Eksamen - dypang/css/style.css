@@ -1,261 +1,350 @@
 /* ---------- root variables ---------- */
 :root {
-    --light-green: rgb(172, 198, 201);
-  }
-  
-  /* ---------- general styling ---------- */
-  html,
-  body {
-    text-align: center;
-    width: 100vw;
-    overflow-x: hidden;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "PT Serif", serif;
-    background-color: white;
-  }
-  
-  h1 {
-    font-size: 2em;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-  }
-  
-  /* ---------- page styling ---------- */
-  .page {
-    display: block;
-    /*min heigh is screen heigh minus height of tab and top bar */
-    min-height: calc(100vh - 110px);
-    background: var(--light-grey);
-    animation: fadeIn 0.4s;
-    /* padding equals height of tabbar and topbar */
-    padding: 55px 0;
-  }
-  
-  /* ---------- header styling ---------- */
-  .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 9999;
-    padding: 1em 0;
-    height: 3em;
-    background-color: white;
-  }
-  
-  /* header content width*/
-  .tabbar {
-    width: 80%;
-    margin: 0 auto;
-  
-    display: flex;
-    position: relative;
-    justify-content: space-between;
-  }
+  --light-green: rgb(172, 198, 201);
+}
 
-  .hide {
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s 0.4s, opacity 0.4s linear;
-  }
-  
-  .mobileiconlabel {
-    right: 0;
-    position: absolute;
-    display: inline-block;
-    font-style: normal;
-    font-size: 1.2rem;
-    font-size: 1.2rem;
-    padding: 10px 5px;
-  }
-  
-  .menuitem {
-    text-align: center;
-    width: 100%;
-    padding: 10px 0;
-    text-decoration: none;
-    white-space: nowrap;
-  }
-  
-  .active_menuitem {
-    border-radius: 5px;
-    border: solid 2px lightgray;
-  }
-  
+/* ---------- general styling ---------- */
+html,
+body {
+  text-align: center;
+  width: 100vw;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "PT Serif", serif;
+  background-color: white;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+
+.logo {
+  position: absolute;
+  margin-right: 69%;
+  margin-top: 25px;
+  transform: translate(-50%, -50%);
+}
+
+/* ---------- page styling ---------- */
+.page {
+  display: block;
+  /*min heigh is screen heigh minus height of tab and top bar */
+  min-height: calc(100vh - 110px);
+  background: var(--light-grey);
+  animation: fadeIn 0.4s;
+  /* padding equals height of tabbar and topbar */
+  padding: 55px 0;
+}
+
+/* ---------- header styling ---------- */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  padding: 1em 0;
+  height: 3em;
+  background-color: white;
+}
+
+/* header content width*/
+.tabbar {
+  width: 80%;
+  margin: 0 auto;
+
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+}
+
+.hide {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 0.4s, opacity 0.4s linear;
+}
+
+
+.mobileiconlabel {
+  right: 0;
+  position: absolute;
+  display: inline-block;
+  font-style: normal;
+  font-size: 0.4rem;
+  font-size: 0.4rem;
+  padding: 10px 5px;
+}
+
+.menuitem {
+  text-align: center;
+  width: 100%;
+  padding: 10px 0;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.active_menuitem {
+  border-radius: 5px;
+  border: solid 2px #D6CECE;
+}
+
+.cta_style {
+  background-color: white;
+  border-radius: 10px;
+  color: white;
+}
+
+/* Hide checkbox and menuitems until clicked */
+.menuitems__container,
+.mobileicon {
+  display: none;
+}
+
+/* Show menuitems when mobileicon-label is clicked */
+.mobileicon:checked ~ .menuitems__container {
+  display: flex;
+}
+
+.menuitems__container {
+  margin-left: -12.5%;
+  margin-right: -12.5%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-top: 3em;
+  padding-top: 1em;
+  flex-direction: column;
+  background-color: white;
+}
+
+/* ------ Slides første side ------ */
+.SimpleSlider {
+  position: relative;
+  height: 100px;
+  width: 100%;
+  outline: 1px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  margin-top: 100px;
+}
+
+.SimpleSlider IMG {
+  position: absolute;
+  opacity: 1;
+  -webkit-transition: opacity 1s;
+  -moz-transition: opacity 1s;
+  -ms-transition: opacity 1s;
+  -o-transition: opacity 1s;
+  transition: opacity 1s;
+}
+
+.SimpleSlider IMG.is-hidden {
+  opacity: 0;
+}
+
+.billede2 {
+  width: 80%;
+  height: 800px;
+}
+
+/* -------- Tekstboks forside ------ */
+
+.tekstboks1 {
+  margin-top: 380px;
+  margin-left: 130px;
+  margin-right: 130px;
+}
+
+/* --------- Grid boks ---------- */
+
+.container {
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: 1fr 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "celle1 celle2 celle3 celle4"
+    ". ."; 
+
+}
+
+.grid-container {
+  display: flex;
+  flex-direction: column;
+  width: 98%;
+  text-align: center;
+  grid-template-areas: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 6px 6px;
+  grid-template-areas:
+      "celle1 celle2 celle3"
+      ". . ."
+      ". . .";
+  margin-top: 5px;
+
+}
+
+.grid_container1 {
+  grid-area: celle1;
+}
+
+.grid_container2 {
+  grid-area: celle2;
+}
+
+.grid_container3 {
+  grid-area: celle3;
+}
+
+.grid_container4 {
+  grid-area: celle4;
+}
+
+.billede_container2 {
+  width: 10px;
+}
+
+
+/* ----- Page footer ----- */
+
+.page_footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+  border-top: 1px solid #D6CECE;
+  padding-top: 20px;
+  padding: 10px;
+  color: black;
+  font-family: "PT Serif", serif;
+  background-color: #D6CECE;
+}
+
+.footer_card_heading {
+  margin-bottom: 5px;
+  font-size: 25px;
+  text-align: center;
+}
+
+.address {
+  font-size: 15px;
+  margin-top: -15px;
+}
+
+.footer_card:first-child .footer_card_heading {
+  margin-bottom: 5px;
+}
+
+.some_image {
+  width: 40px;
+  margin: 10px;
+}
+
+@media only screen and (max-width: 700px) {
   .cta_style {
-    background-color: white;
-    border-radius: 10px;
+    background-color: lightgray;
     color: white;
+    border-radius: 10px;
+    color: black;
   }
-  
-  /* Hide checkbox and menuitems until clicked */
-  .menuitems__container, .mobileicon {
+
+  .mobileiconlabel,
+  .mobileicon {
+    margin-right: 10px;
+    color: black;
+  }
+}
+
+/* ----- Page footer ----- */
+
+.page_footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+  border-top: 1px solid black;
+  padding: 10px;
+  color: black;
+  font-family: "PT Serif", serif;
+  background-color: #D6CECE;
+  width: 100%;
+}
+
+.footer_card_heading {
+  margin-bottom: 5px;
+  font-size: 15px;
+  text-align: center;
+  margin-top: 10px;
+  margin-right: 20px;
+}
+
+.footer_card_heading1 {
+  margin-bottom: 5px;
+  font-size: 15px;
+  text-align: center;
+  margin-top: 10px;
+  margin-right: 90px;
+  margin-left: -80px;
+}
+
+.address {
+  margin-left: -180px;
+  margin-top: 10px;
+}
+
+.footer_card:first-child .footer_card_heading {
+  margin-bottom: 5px;
+  margin-right: 20px;
+}
+
+.some_image {
+  width: 23px;
+  margin: 20px;
+  margin-left: -10px;
+}
+
+.mobil {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .mobileiconlabel,
+  .mobileicon {
     display: none;
   }
-  
-  /* Show menuitems when mobileicon-label is clicked */
-  .mobileicon:checked ~ .menuitems__container {
-    display: flex;
+
+  .tabbar {
+    justify-content: flex-end;
   }
-  
+
   .menuitems__container {
-    margin-left: -12.5%;
-    margin-right: -12.5%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin-top: 3em;
-    padding-top: 1em;
-    flex-direction: column;
-    background-color: white;
-  }
-
-
-
-  /* ----- Page footer ----- */
-
-.page_footer {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    text-align: center;
-    border-top: 1px solid #9e866c;
-    padding-top: 20px;
-    padding: 40px;
+    align-items: center;
+    position: initial;
+    margin: 0;
+    padding-top: 0;
+  }
+
+  .menuitem {
+    font-size: 20px;
+    font-weight: bold;
     color: black;
-    font-family: "PT Serif", serif;
-    background-color: white;
-  }
-  
-  .footer_card_heading {
-    margin-bottom: 5px;
-    font-size: 15px;
-    text-align: center;
-  }
-  
-  .address {
-    font-size: 15px;
-    margin-top: -15px;
-  }
-  
-  .footer_card:first-child .footer_card_heading {
-    margin-bottom: 5px;
-  }
-  
-  .some_image {
-    width: 40px;
-    margin: 10px;
+    background: none;
+    margin-left: 2em;
+    padding: 10px;
   }
 
-
-  @media only screen and (max-width: 700px) {
-  
-    .cta_style {
-      background-color: lightgray;
-      color: white;
-      border-radius: 10px;
-      color: black;
-    }
-  
-    .mobileiconlabel,
-    .mobileicon {
-      margin-right: 10px;
-      color: black;
-    } }
-  
-
-    /* ----- Page footer ----- */
-
-.page_footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    text-align: center;
-    border-top: 1px solid black;
-    padding: 40px;
-    color: black;
-    font-family: "PT Serif", serif;
-    background-color: white;
-    width: 100%;
+  .menuitem:hover {
+    background-color: #D6CECE;
+    color: white;
+    border-radius: 6px;
   }
-  
-  .footer_card {
-    margin: 10px;
-  }
-  
-  .footer_card_heading {
-    margin-bottom: 5px;
-    font-size: 10px;
-    text-align: center;
-    margin-top: -10px;
-    margin-right: 20px;
-  }
-  
-  .footer_card_heading1 {
-    margin-bottom: 5px;
-    font-size: 10px;
-    text-align: center;
-    margin-top: -10px;
-    margin-right: 90px;
-    margin-left: -80px;
-  }
-  
-  .address {
-    margin-left: -180px;
-    margin-top: 10px;
-  }
-  
-  .footer_card:first-child .footer_card_heading {
-    margin-bottom: 5px;
-    margin-right: 20px;
-  }
-  
-  .some_image {
-    width: 23px;
-    margin: 20px;
-    margin-left: -10px;
-  }
-  
-  .mobil {
-    display: none;
-  }
-  
-  
-  @media only screen and (min-width: 768px) {
-  
-    .mobileiconlabel,
-    .mobileicon {
-      display: none;
-    }
-  
-    .tabbar {
-      justify-content: flex-end;
-    }
-  
-    .menuitems__container {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      position: initial;
-      margin: 0;
-      padding-top: 0;
-    }
-  
-    .menuitem {
-      font-size: 20px;
-      font-weight: bold;
-      color: black;
-      background: none;
-      margin-left: 2em;
-      padding: 10px;
-    }
-  
-    .menuitem:hover {
-      background-color: antiquewhite;
-      color: white;
-      border-radius: 5px;
-    } 
-  }  
+}

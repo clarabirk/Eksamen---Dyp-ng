@@ -4,6 +4,7 @@ const _routes = {
     "#/arrangementer": "arrangementer",
     "#/tilbyder": "tilbyder",
     "#/kontakt": "kontakt",
+    "#/booking": "booking",
 };
 const _pages = document.querySelectorAll(".page");
 const _basePath = location.pathname.replace("index.html", ""); // remove index.html from path
