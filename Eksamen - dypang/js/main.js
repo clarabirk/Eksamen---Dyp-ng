@@ -25,3 +25,33 @@ setInterval(function() {
     root.querySelector(':first-child').classList.add('is-hidden');
     root.querySelector(':nth-child(2)').classList.remove('is-hidden');
 }, 4000)
+
+
+    function filter(input) {
+        var array = [];
+        var data = document.getElementsByClassName("data");
+        for (let i = 0; i < data.length; i++) {
+          array.push(data[i]);  
+        }
+        
+        for (let i = 0; i < array.length; i++) {
+          if (input == "alle"){
+            array[i].style.display = "block"
+          }
+          
+          else if (array[i].className.includes(input)){
+            array[i].style.display = "block"
+          }
+          else {
+            array[i].style.display = "none"
+          }
+             
+        }
+        
+        }
+
+
+
+
+
+        
